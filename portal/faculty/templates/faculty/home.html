@@ -136,7 +136,7 @@
                                         {% for area in research_areas %}
                                             {% with area_without_quotes=area|cut:"'" %}
                                                 <div role="listitem" class="category-item w-dyn-item">
-                                                    <a href="/search?query={{ area_without_quotes }}" class="text-100 text-link">{{ area }}</a>
+                                                    <a href="/search?area={{ area_without_quotes }}" class="text-100 text-link">{{ area }}</a>
                                                 </div>
                                             {% endwith %}
                                         {% endfor %}                                    
@@ -158,7 +158,7 @@
                                           {% for college in colleges %}
                                           <div role="listitem" class="category-item w-dyn-item">
                                             {% with college_without_quotes=college|cut:"'" %}
-                                                <a href="/search?query={{ college_without_quotes }}" class="text-100 text-link">{{ college }}</a>
+                                                <a href="/search?university={{ college_without_quotes }}" class="text-100 text-link">{{ college }}</a>
                                             {% endwith %}
                                           </div>
                                           {% endfor %}
@@ -316,8 +316,8 @@
          <section class="section padding-top-none">
             <div class="container-large-1158px">
                <h2 data-w-id="7f67faea-be84-a72a-fe99-f615e4795904" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1;" class="margin-bottom-small text-center">Take a look at <span class="text-breaking-no-wrap">our numbers</span></h2>
-               <div class="w-layout-grid grid-3-columns style-1">
-                  <div data-w-id="1cd3d9ed-e575-2469-8f61-469b0dc6958f" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1;" class="max-width-298px text-center">
+               <div class="w-layout-grid grid-2-columns style-1">
+                  <div data-w-id="1cd3d9ed-e575-2469-8f61-469b0dc6958f" style=" margin: auto; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1;" class="max-width-298px text-center">
                      <div class="margin-bottom-small-v3">
                         <div class="large-number text-primary-1">60+</div>
                      </div>
@@ -326,16 +326,16 @@
                         <p class="margin-bottom-0px">were listed from a vast range of domains.</p>
                      </div>
                   </div>
-                  <div data-w-id="7891e0b4-225f-3a2e-9844-02a5f4160e69" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1;" class="max-width-298px text-center">
+                  <div data-w-id="7891e0b4-225f-3a2e-9844-02a5f4160e69" style=" margin: auto; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1;" class="max-width-298px text-center">
                      <div class="margin-bottom-small-v3">
-                        <div class="large-number text-primary-1">1000+</div>
+                        <div class="large-number text-primary-1">1150+</div>
                      </div>
                      <div>
                         <h3 class="margin-bottom-11px">Professors</h3>
                         <p class="margin-bottom-0px">information, including their research areas & contact details.</p>
                      </div>
                   </div>
-                  <div data-w-id="e69a22b7-3d3b-6752-82ff-d8ba057f7e4e" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1;" class="max-width-298px text-center">
+                  <!-- <div data-w-id="e69a22b7-3d3b-6752-82ff-d8ba057f7e4e" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1;" class="max-width-298px text-center">
                      <div class="margin-bottom-small-v3">
                         <div class="large-number text-primary-1">2000+</div>
                      </div>
@@ -343,7 +343,7 @@
                         <h3 class="margin-bottom-11px">Students</h3>
                         <p class="margin-bottom-0px">were benefited through this initiative.</p>
                      </div>
-                  </div>
+                  </div> -->
                </div>
             </div>
          </section>

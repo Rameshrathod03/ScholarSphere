@@ -96,11 +96,17 @@
                            <div class="split-content filters-left">
                               <form action="/search" class="filter-search-wrapper w-form"><input class="input filter-search w-input" maxlength="256" name="query" placeholder="Search" type="search" id="search" required=""><input type="submit" class="button-primary bg-primary-1 filter-search w-button" value="Search"></form>
                            </div>
-                           <div class="split-content filters-right" style="justify-content: space-evenly;">
+                           <div class="split-content filters-right">
                               <div data-hover="true" data-delay="0" class="dropdown-category w-dropdown">
                                  <div class="dropdown-category-toggle w-dropdown-toggle" id="w-dropdown-toggle-1" aria-controls="w-dropdown-list-1" aria-haspopup="menu" aria-expanded="false" role="button" tabindex="0">
                                     <div class="dropdown-category-icon icon-size-21px"></div>
-                                    <div class="dropdown-category-text">{{ request.GET.area|default_if_none:'Research Areas'|slice:":14"}}</div>
+                                    <div class="dropdown-category-text">
+                                       {% if request.GET.area %}
+                                          {{ request.GET.area|slice:":14"}}
+                                       {% else %}
+                                          Research Areas
+                                       {%endif%}
+                                    </div>
                                     <div class="dropdown-category-arrow"></div>
                                  </div>
                                  <nav class="filters-dropdown-list w-dropdown-list" style="display: none; transform: translate3d(0px, 10px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 0; height: 0px;" id="w-dropdown-list-1" aria-labelledby="w-dropdown-toggle-1">
@@ -146,6 +152,11 @@
                                        </div>
                                     </div>
                                  </nav>
+                              </div>
+                              <div data-hover="true" data-delay="0" class="dropdown-category w-dropdown">
+                                 <div >
+                                    <a href="/search"><button class="button-primary bg-primary-1" style="color: white;">Clear</button></a>
+                                 </div>
                               </div>
                            </div>
                         </div>
