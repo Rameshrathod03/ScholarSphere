@@ -10,7 +10,7 @@
       <meta content="Connect with top professors in your field. Explore research opportunities and ignite your academic journey." name="description" />
       <meta content="ScholarBridge - Explore Research Opportunities" property="og:title" />
       <meta content="Connect with top professors in your field. Explore research opportunities and ignite your academic journey." property="og:description" />
-      <meta content='{% static "images/iit_kgp.jpg" %}' property="og:image" />
+      <meta content='{% static "images/logo.jpeg" %}' property="og:image" />
       <meta property="og:type" content="website" />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link href="https://assets-global.website-files.com/6193ce0889184dacb7d96c80/css/realtortemplate.webflow.729e4eaee.css" rel="stylesheet" type="text/css" />
@@ -89,12 +89,12 @@
                               <h2 data-w-id="c1d6551f-a186-1ccc-0a64-1d8746376578" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">{{professor.name}}</h2>
                               <p style="text-wrap: wrap;" data-w-id="3f50e0b8-0a7f-44de-a454-6e3b34598ec7" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">
                                  University: <strong>{{professor.college}}</strong>
-                                 <br>
                                  {% if professor.department %}
+                                 <br>
                                  Department: <strong>{{professor.department}}</strong>
                                  {% endif %}
-                                 <br>
                                  {% if professor.designation %}
+                                 <br>
                                  Designation: <strong>{{professor.designation}}</strong>
                                  {% endif %}
                                  <br>
@@ -104,9 +104,11 @@
                                  {% if not forloop.last %}, {% endif %}
                                  {% endfor %}
                               </p>
+                              {% if professor.profile_url %}
                               <a data-w-id="3f50e0b8-0a7f-44de-a454-6e3b34598ec7" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" href="{{professor.profile_url}}" target="_blank">
                               More Info
                               </a>
+                              {% endif %}
                            </div>
                            <div data-w-id="c64fdd1d-0e66-2a61-949b-8438b3e672be" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
                               class="horizontal-divider"></div>
@@ -123,6 +125,7 @@
                                  </a>
                               </div>
                               {% endif %}
+                              {% if professor.email %}
                               <div class="split-content agent-content-bottom-right">
                                  <a href="mailto:{{professor.email}}" class="text-200 text-link text-neutral-800 w-inline-block">
                                     <div class="flex">
@@ -132,6 +135,7 @@
                                     </div>
                                  </a>
                               </div>
+                              {% endif %}
                            </div>
                         </div>
                      </div>

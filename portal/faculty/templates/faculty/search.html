@@ -10,7 +10,7 @@
       <meta content="Connect with top professors in your field. Explore research opportunities and ignite your academic journey." name="description" />
       <meta content="ScholarBridge - Explore Research Opportunities" property="og:title" />
       <meta content="Connect with top professors in your field. Explore research opportunities and ignite your academic journey." property="og:description" />
-      <meta content='{% static "images/iit_kgp.jpg" %}' property="og:image" />
+      <meta content='{% static "images/logo.jpeg" %}' property="og:image" />
       <meta property="og:type" content="website" />
       <meta property="og:type" content="website" />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -104,7 +104,7 @@
                                     <div class="dropdown-category-arrow"></div>
                                  </div>
                                  <nav class="filters-dropdown-list w-dropdown-list" style="display: none; transform: translate3d(0px, 10px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 0; height: 0px;" id="w-dropdown-list-1" aria-labelledby="w-dropdown-toggle-1">
-                                    <div class="card style-2">
+                                    <div class="card style-2" style="max-height: 400px; overflow-y: scroll;">
                                        <div class="w-dyn-list">
                                           <div role="list" class="grid-1-column w-dyn-items">
                                              {% for area in research_areas %}
@@ -126,7 +126,7 @@
                                     <div class="dropdown-category-arrow"></div>
                                  </div>
                                  <nav class="filters-dropdown-list w-dropdown-list" style="display: none; transform: translate3d(0px, 10px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 0; height: 0px;" id="w-dropdown-list-2" aria-labelledby="w-dropdown-toggle-2">
-                                    <div class="card style-2">
+                                    <div class="card style-2" style="max-height: 400px; overflow-y: scroll;">
                                        <div class="w-dyn-list">
                                           <div role="list" class="grid-1-column w-dyn-items" style="max-height: 250px; overflow-y: scroll;">
                                              {% for college in colleges %}
@@ -156,9 +156,17 @@
                               <div class="card-property-content">
                                  <div class="h3-size margin-bottom-12px">{{faculty.name}}</div>
                                  <h3 class="h5-size margin-bottom-10px">{{faculty.college}}</h3>
+                                 {% if faculty.department %}
                                  <div class="flex">
-                                    <div class="text-100">{{faculty.department}}</div>
+                                       <div class="text-100">{{faculty.department}}</div>
                                  </div>
+                                 {% endif %}
+                                 {% if faculty.email %}
+                                 <br>
+                                 <div>
+                                       <div class="text-100">{{faculty.email}}</div>
+                                 </div>
+                                 {% endif %}
                                  <div class="margin-top-none">
                                     <div class="horizontal-divider margin-bottom-reduced"></div>
                                     <div class="flex children-wrap badges-12px">
