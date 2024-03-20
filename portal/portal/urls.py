@@ -13,5 +13,5 @@ urlpatterns = [
     path('professor/<slug:professor_name>/', views.professor, name='professor'),
 ] 
 
-if settings.DEUBG:
+if settings.DEBUG:
   urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
