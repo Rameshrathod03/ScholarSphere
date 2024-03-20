@@ -100,7 +100,7 @@
                               <div data-hover="true" data-delay="0" class="dropdown-category w-dropdown">
                                  <div class="dropdown-category-toggle w-dropdown-toggle" id="w-dropdown-toggle-1" aria-controls="w-dropdown-list-1" aria-haspopup="menu" aria-expanded="false" role="button" tabindex="0">
                                     <div class="dropdown-category-icon icon-size-21px"></div>
-                                    <div class="dropdown-category-text">Research Areas</div>
+                                    <div class="dropdown-category-text">{{ request.GET.area|default_if_none:'Research Areas'|slice:":14"}}</div>
                                     <div class="dropdown-category-arrow"></div>
                                  </div>
                                  <nav class="filters-dropdown-list w-dropdown-list" style="display: none; transform: translate3d(0px, 10px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 0; height: 0px;" id="w-dropdown-list-1" aria-labelledby="w-dropdown-toggle-1">
@@ -110,7 +110,7 @@
                                              {% for area in research_areas %}
                                              {% with area_without_quotes=area|cut:"'" %}
                                              <div role="listitem" class="category-item w-dyn-item">
-                                                <a href="/search?query={{ area_without_quotes }}" class="text-100 text-link">{{ area }}</a>
+                                                <a href="?university={{ request.GET.university|default_if_none:'' }}&area={{ area_without_quotes }}" class="text-100 text-link">{{ area }}</a>
                                              </div>
                                              {% endwith %}
                                              {% endfor %}  
@@ -122,7 +122,13 @@
                               <div data-hover="true" data-delay="0" class="dropdown-category w-dropdown">
                                  <div class="dropdown-category-toggle w-dropdown-toggle" id="w-dropdown-toggle-2" aria-controls="w-dropdown-list-2" aria-haspopup="menu" aria-expanded="false" role="button" tabindex="0">
                                     <div class="dropdown-category-icon"></div>
-                                    <div class="dropdown-category-text">University</div>
+                                    <div class="dropdown-category-text">
+                                       {% if request.GET.university %}
+                                       {{ request.GET.university|slice:":14"}}
+                                       {% else %}
+                                       University
+                                       {%endif%}
+                                    </div>
                                     <div class="dropdown-category-arrow"></div>
                                  </div>
                                  <nav class="filters-dropdown-list w-dropdown-list" style="display: none; transform: translate3d(0px, 10px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 0; height: 0px;" id="w-dropdown-list-2" aria-labelledby="w-dropdown-toggle-2">
@@ -132,7 +138,7 @@
                                              {% for college in colleges %}
                                              <div role="listitem" class="category-item w-dyn-item">
                                                 {% with college_without_quotes=college|cut:"'" %}
-                                                <a href="/search?query={{ college_without_quotes }}" class="text-100 text-link">{{ college }}</a>
+                                                <a href="?university={{ college_without_quotes }}&area={{ request.GET.area|default_if_none:'' }}" class="text-100 text-link">{{ college }}</a>
                                                 {% endwith %}
                                              </div>
                                              {% endfor %}
@@ -193,7 +199,7 @@
          <footer class="footer" style="padding-top: 40px;">
             <div class="container-default w-container">
                 <div data-w-id="c8f7715e-98a4-26c7-1f78-d290db08fe91" class="footer-content-bottom">
-                    <div class="text-center">Website made with ❤️ by students of <a href="#"class="text-decoration-none">Patel Hall</a> at <a href="https://iitkgp.ac.in/" target="_blank" class="text-decoration-none">IIT Kharagpur</a></div>
+                    <div class="text-center">Website made with ❤️ by <a href="https://www.linkedin.com/in/devansh-jain11/" target="_blank" class="text-decoration-none">Devansh</a> And Team</div>
                 </div>
             </div>
          </footer>

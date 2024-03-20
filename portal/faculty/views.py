@@ -2,19 +2,33 @@ from django.shortcuts import render
 from .models import Faculty
 from django.db.models import Q
 import json
+from urllib.parse import unquote_plus
 
 def blog1(request):
     return render(request, 'faculty/blog1.html')
 
 def search(request):
     query = request.GET.get('query', None)
+    university = request.GET.get('university', None)
+    area = request.GET.get('area', None)
 
     All_Faculties = Faculty.objects.all()
 
     if query:
-        Faculties = (Faculty.objects.filter(Q(college__icontains=query)) | Faculty.objects.filter(Q(name__icontains=query)) | Faculty.objects.filter(Q(department__icontains=query)) | Faculty.objects.filter(Q(research_areas__icontains=query))) 
+        Faculties = (Faculty.objects.filter(Q(college__icontains=query)) | 
+                     Faculty.objects.filter(Q(name__icontains=query)) | 
+                     Faculty.objects.filter(Q(department__icontains=query)) | 
+                     Faculty.objects.filter(Q(research_areas__icontains=query))) 
     else:
         Faculties = All_Faculties
+
+    if university and area:
+        Faculties = Faculties.filter(college__icontains=unquote_plus(university),
+                                     research_areas__icontains=unquote_plus(area))
+    elif university:
+        Faculties = Faculties.filter(college__icontains=unquote_plus(university))
+    elif area:
+        Faculties = Faculties.filter(research_areas__icontains=unquote_plus(area))
 
     all_research_areas = set()
     for faculty in All_Faculties:
