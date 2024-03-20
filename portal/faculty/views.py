@@ -3,6 +3,9 @@ from .models import Faculty
 from django.db.models import Q
 import json
 
+def blog1(request):
+    return render(request, 'faculty/blog1.html')
+
 def search(request):
     query = request.GET.get('query', None)
 
