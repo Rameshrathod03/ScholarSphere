@@ -80,14 +80,14 @@
          </div>
          <section class="section hero-default agent" style="background-color: var(--neutral-200) !important;">
             <div class="container-default position-relative z-index-1 w-container" style="width: fit-content; margin-bottom: 4rem;">
-               <div class="mobile-max-width-660px mobile-center-element">
+               <div class="mobile-max-width-660px mobile-center-element" style="min-width: 60vw;">
                   <div data-w-id="579753be-bd80-0841-f9de-54a1f90a0d08" style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
                      class="card agent">
                      <div class="agent-main-content" style="max-width: none; min-width: fit-content;">
                         <div class="agent-content" style="max-width: fit-content;">
                            <div class="agent-content-top">
                               <h2 data-w-id="c1d6551f-a186-1ccc-0a64-1d8746376578" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">{{professor.name}}</h2>
-                              <p style="text-wrap: wrap;" data-w-id="3f50e0b8-0a7f-44de-a454-6e3b34598ec7" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">
+                              <p style="text-wrap: wrap;" id="text-card-info" data-w-id="3f50e0b8-0a7f-44de-a454-6e3b34598ec7" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">
                                  University: <strong>{{professor.college}}</strong>
                                  {% if professor.department %}
                                  <br>
@@ -104,8 +104,15 @@
                                  {% if not forloop.last %}, {% endif %}
                                  {% endfor %}
                               </p>
+                              <style>
+                                 @media screen and (max-width: 500px){
+                                    #text-card-info{
+                                       font-size: 0.8rem;
+                                    }
+                                 }
+                              </style>
                               {% if professor.profile_url %}
-                              <a data-w-id="3f50e0b8-0a7f-44de-a454-6e3b34598ec7" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" href="{{professor.profile_url}}" target="_blank">
+                              <a id="text-card-info" data-w-id="3f50e0b8-0a7f-44de-a454-6e3b34598ec7" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" href="{{professor.profile_url}}" target="_blank">
                               More Info
                               </a>
                               {% endif %}
