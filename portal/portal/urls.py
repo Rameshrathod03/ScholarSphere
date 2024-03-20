@@ -11,4 +11,7 @@ urlpatterns = [
     path('optimizing-your-resume/', views.blog1, name='optimizing-your-resume'),
     path('search/', views.search, name='search'),
     path('professor/<slug:professor_name>/', views.professor, name='professor'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 
+
+if settings.DEUBG:
+  urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
