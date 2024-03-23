@@ -10,6 +10,15 @@ def blog1(request):
 def blog2(request):
     return render(request, 'faculty/blog2.html')
 
+def blog3(request):
+    return render(request, 'faculty/blog3.html')
+
+def blog4(request):
+    return render(request, 'faculty/blog4.html')
+
+def blog5(request):
+    return render(request, 'faculty/blog5.html')
+
 def search(request):
     query = request.GET.get('query', None)
     university = request.GET.get('university', None)
