@@ -7,6 +7,9 @@ from urllib.parse import unquote_plus
 def blog1(request):
     return render(request, 'faculty/blog1.html')
 
+def blog2(request):
+    return render(request, 'faculty/blog2.html')
+
 def search(request):
     query = request.GET.get('query', None)
     university = request.GET.get('university', None)

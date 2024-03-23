@@ -9,6 +9,7 @@ urlpatterns = [
 
     path('', views.home, name='home'),
     path('optimizing-your-resume/', views.blog1, name='optimizing-your-resume'),
+    path('sample-cover-letter/', views.blog2, name="sample-cover-letter"),
     path('search/', views.search, name='search'),
     path('professor/<slug:professor_name>/', views.professor, name='professor'),
 ] 

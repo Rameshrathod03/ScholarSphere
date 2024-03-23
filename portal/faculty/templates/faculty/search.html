@@ -177,10 +177,10 @@
                                  <div class="flex">
                                        <div class="text-100">{{faculty.department}}</div>
                                  </div>
-                                 {% elif faculty.designation %}
+                                 {% comment %} {% elif faculty.designation %}
                                  <div class="flex">
                                        <div class="text-100">{{faculty.designation}}</div>
-                                 </div>
+                                 </div> {% endcomment %}
                                  {% endif %}
                                  {% if faculty.email %}
                                  <br>
