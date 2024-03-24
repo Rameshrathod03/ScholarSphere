@@ -111,10 +111,14 @@
                                     }
                                  }
                               </style>
+                              {% if not professor.college == "IIM Calcutta" %}
+                              
                               {% if professor.profile_url %}
                               <a id="text-card-info" data-w-id="3f50e0b8-0a7f-44de-a454-6e3b34598ec7" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" href="{{professor.profile_url}}" target="_blank">
                               More Info
                               </a>
+                              {% endif %}
+
                               {% endif %}
                            </div>
                            <div data-w-id="c64fdd1d-0e66-2a61-949b-8438b3e672be" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
